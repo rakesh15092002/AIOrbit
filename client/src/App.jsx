@@ -11,19 +11,21 @@ import ReviewResume from "./pages/ReviewResume";
 import RemoveObject from "./pages/RemoveObject";
 import Community from "./pages/community";
 import { useAuth } from "@clerk/clerk-react";
+import {Toaster} from 'react-hot-toast'
 
 const App = () => {
-  // ✅ use hooks here (not inside return)
-  const { getToken } = useAuth();
+  // // ✅ use hooks here (not inside return)
+  // const { getToken } = useAuth();
 
-  useEffect(() => {
-    getToken().then((token) => {
-      console.log("Clerk Token:", token);
-    });
-  }, [getToken]);
+  // useEffect(() => {
+  //   getToken().then((token) => {
+  //     console.log("Clerk Token:", token);
+  //   });
+  // }, [getToken]);
 
   return (
     <div>
+      <Toaster/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ai" element={<Layout />}>
